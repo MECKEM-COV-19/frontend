@@ -9,7 +9,7 @@ phases:
   build:
     commands:
       # trigger production build
-      - ng run prodbuild
+      - npm run build
 
   post_build:
     commands:
@@ -18,4 +18,4 @@ phases:
       # trigger headless e2e tests
       #- npm run e2e-headless
       # copy artifacts to the S3 bucket
-      - aws s3 cp --recursive dist/javamagazin s3://$S3_BUCKET/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
+      - aws s3 cp --recursive dist/frontend s3://$S3_BUCKET/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
