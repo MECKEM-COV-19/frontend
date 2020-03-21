@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [QuestionnaireComponent, QuestionComponent],
@@ -23,7 +24,8 @@ import { MatCardModule } from '@angular/material/card';
     FlexLayoutModule,
     FormsModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule
   ],
   exports: [
     QuestionnaireComponent
