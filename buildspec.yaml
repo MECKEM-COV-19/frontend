@@ -18,10 +18,3 @@ phases:
       # trigger headless e2e tests
       #- npm run e2e-headless
       - cd dist/frontend; zip -r ../../frontend.zip *
-
-artifacts:
-  secondary-artifacts:
-    frontend-build:
-      base-directory: $CODEBUILD_SRC_DIR
-      files:
-        - frontend.zip
