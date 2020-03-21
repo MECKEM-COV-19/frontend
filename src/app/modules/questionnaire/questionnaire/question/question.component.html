@@ -1,1 +1,14 @@
-{{ question.question }}
+<div fxFlex="20"></div>
+<mat-card fxLayout="column" fxLayoutAlign="space-around stretch" fxFlex="60">
+    <mat-card-header>
+        <h2>{{ question.question }}</h2>
+    </mat-card-header>
+    <mat-card-content fxLayout="row">
+        <div fxFlex="20"></div>
+        <div fxFlex="60">
+            <ng-content></ng-content>
+        </div>
+        <div fxFlex="20"></div>
+    </mat-card-content>
+</mat-card>
+<div fxFlex="20"></div>

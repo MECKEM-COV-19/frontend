@@ -20,5 +20,5 @@ export class QuestionnaireQuestionsService {
     age: {
       question: 'How old are you?'
     }
-  }
+  };
 }
