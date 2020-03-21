@@ -17,5 +17,3 @@ phases:
       #- npm run test-headless
       # trigger headless e2e tests
       #- npm run e2e-headless
-      # copy artifacts to the S3 bucket
-      - aws s3 cp --recursive dist/frontend s3://$S3_BUCKET/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
