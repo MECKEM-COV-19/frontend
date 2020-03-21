@@ -1,0 +1,21 @@
+version: 0.2
+ 
+phases:
+  install:
+    commands:
+      # install dependencies needed for running tests
+      - npm install
+ 
+  build:
+    commands:
+      # trigger production build
+      - ng run prodbuild
+
+  post_build:
+    commands:
+      # trigger headless karma tests
+      #- npm run test-headless
+      # trigger headless e2e tests
+      #- npm run e2e-headless
+      # copy artifacts to the S3 bucket
+      - aws s3 cp --recursive dist/javamagazin s3://$S3_BUCKET/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
