@@ -8,15 +8,12 @@ phases:
  
   build:
     commands:
+      # trigger linter
+      - npm run lint
+      # trigger unit tests
+      #- npm run test
       # trigger production build
       - npm run build
-
-  post_build:
-    commands:
-      # trigger headless karma tests
-      #- npm run test-headless
-      # trigger headless e2e tests
-      #- npm run e2e-headless
 
 artifacts:
   files:
