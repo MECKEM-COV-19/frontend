@@ -1,19 +1,20 @@
-<ng-form fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="32px">
+<form [formGroup]="covidForm" fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="32px" (ngSubmit)="onSubmit()">
     <app-question [question]="covidQuestionnaire.bodyTemperature">
         <mat-form-field>
             <mat-label>Body Temperature</mat-label>
-            <input matInput placeholder="Body Temperature">
+            <input matInput placeholder="Body Temperature" formControlName="bodyTemperature">
         </mat-form-field>
     </app-question>
     <app-question [question]="covidQuestionnaire.cough">
-        <mat-radio-group fxLayout="column" fxLayoutAlign="space-around start" fxLayoutGap="8px">
+        <mat-radio-group fxLayout="column" fxLayoutAlign="space-around start" fxLayoutGap="8px" formControlName="cough">
             <mat-radio-button *ngFor="let option of covidQuestionnaire.cough.options" [value]="option">{{ option }}</mat-radio-button>
         </mat-radio-group>
     </app-question>
     <app-question [question]="covidQuestionnaire.age">
         <mat-form-field>
             <mat-label>Age</mat-label>
-            <input matInput placeholder="Age">
+            <input matInput placeholder="Age" formControlName="age">
         </mat-form-field>
     </app-question>
-</ng-form>
+    <button mat-button color="primary" type="submit">Submit</button>
+</form>

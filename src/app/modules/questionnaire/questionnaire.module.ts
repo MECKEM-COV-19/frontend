@@ -8,7 +8,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
@@ -22,7 +22,8 @@ import { MatCardModule } from '@angular/material/card';
     MatInputModule,
     FlexLayoutModule,
     FormsModule,
-    MatCardModule
+    MatCardModule,
+    ReactiveFormsModule
   ],
   exports: [
     QuestionnaireComponent

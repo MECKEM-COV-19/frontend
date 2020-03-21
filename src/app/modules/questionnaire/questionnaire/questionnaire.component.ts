@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionnaireQuestionsService } from 'src/app/modules/questionnaire/questionnaire/services/questionnaire-questions.service';
 import { CovidQuestionnaire } from 'src/app/modules/questionnaire/questionnaire/models/covid-questionnaire';
-import { format } from 'path';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-questionnaire',
@@ -13,8 +13,20 @@ export class QuestionnaireComponent implements OnInit {
 
   constructor(private questionnaireQuestionsSerivce: QuestionnaireQuestionsService) { }
 
+  covidForm = new FormGroup({
+    bodyTemperature: new FormControl('', [
+      Validators.required
+    ]),
+    cough: new FormControl('', []),
+    age: new FormControl('', [])
+  });
+
+
   ngOnInit() {
     this.covidQuestionnaire = this.questionnaireQuestionsSerivce.covidQuestionnaire;
   }
 
+  onSubmit() {
+    console.log(this.covidForm.value);
+  }
 }
