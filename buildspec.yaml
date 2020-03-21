@@ -17,3 +17,4 @@ phases:
       #- npm run test-headless
       # trigger headless e2e tests
       #- npm run e2e-headless
+      - cd dist/frontend; zip -r ../../frontend.zip *
