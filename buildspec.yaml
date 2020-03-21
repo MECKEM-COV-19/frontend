@@ -1,0 +1,20 @@
+version: 0.2
+ 
+phases:
+  install:
+    commands:
+      # install dependencies needed for running tests
+      - npm install
+ 
+  build:
+    commands:
+      # trigger production build
+      - npm run build
+
+  post_build:
+    commands:
+      # trigger headless karma tests
+      #- npm run test-headless
+      # trigger headless e2e tests
+      #- npm run e2e-headless
+      - cd dist/frontend; zip -r ../../frontend.zip *
