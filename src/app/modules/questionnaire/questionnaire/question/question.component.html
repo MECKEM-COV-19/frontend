@@ -16,7 +16,7 @@
             <ng-content></ng-content>
             <div *ngIf="question.options as options" [formGroup]="covidFormGroup">
                 <mat-radio-group fxLayout="column" fxLayoutAlign="space-around start" fxLayoutGap="8px" [formControlName]="options.key">
-                    <mat-radio-button *ngFor="let option of options.options" [value]="option">{{ option }}</mat-radio-button>
+                    <mat-radio-button *ngFor="let option of options.options" [value]="option.value === undefined ? option.text : option.value">{{ option.text }}</mat-radio-button>
                 </mat-radio-group>
             </div>
         </div>

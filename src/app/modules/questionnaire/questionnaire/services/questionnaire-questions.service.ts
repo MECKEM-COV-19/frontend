@@ -16,9 +16,9 @@ export class QuestionnaireQuestionsService {
       question: 'Do you have to cough?',
       options: {
         options: [
-          'Dry cough',
-          'Productive cough',
-          'None'
+          { text: 'Dry cough' },
+          { text: 'Productive cough' },
+          { text: 'None' }
         ],
         key: 'cough'
       }
@@ -27,11 +27,11 @@ export class QuestionnaireQuestionsService {
       question: 'What is your breathing pattern?',
       options: {
         options: [
-          'Normal',
-          'Biot\'s respiration',
-          'Kussmaul breathing',
-          'Cheyne-Stokes respiration',
-          'I don\'t know'
+          { text: 'Normal' },
+          { text: 'Biot\'s respiration' },
+          { text: 'Kussmaul breathing' },
+          { text: 'Cheyne-Stokes respiration' },
+          { text: 'I don\'t know' }
         ],
         key: 'breathingPatterns'
       },
@@ -53,10 +53,10 @@ export class QuestionnaireQuestionsService {
       question: 'How do you feel?',
       options: {
         options: [
-          'good',
-          'normal',
-          'bad',
-          'critical'
+         { text: 'good' },
+         { text: 'normal' },
+         { text: 'bad' },
+         { text: 'critical' }
         ],
         key: 'generalFeeling'
       }
@@ -72,8 +72,8 @@ export class QuestionnaireQuestionsService {
       options: {
         key: 'isPositive',
         options: [
-          'Yes',
-          'No'
+          { text: 'Yes', value: true },
+          { text: 'No', value: false }
         ]
       }
     }

@@ -11,11 +11,16 @@ export interface CovidQuestionnaire {
 export interface Question {
     question: string;
     options?: {
-        options: string[];
+        options: OptionValue[];
         key: string;
     };
     additionalInfo?: string;
     linkHelp?: LinkHelp;
+}
+
+interface OptionValue {
+    text: string;
+    value?: any;
 }
 
 export interface LinkHelp {

@@ -15,14 +15,16 @@ export class QuestionnaireComponent implements OnInit {
   constructor(private questionnaireQuestionsSerivce: QuestionnaireQuestionsService) { }
 
   covidForm = new FormGroup({
+    isPositive: new FormControl('', [
+      Validators.required
+    ]),
     bodyTemperature: new FormControl('', [
       Validators.required
     ]),
     cough: new FormControl('', []),
     age: new FormControl('', []),
     breathingPatterns: new FormControl('', []),
-    generalFeeling: new FormControl('', []),
-    isPositive: new FormControl('', [])
+    generalFeeling: new FormControl('', [])
   });
 
   get bodyTemperature() { return this.covidForm.get('bodyTemperature'); }
@@ -34,7 +36,9 @@ export class QuestionnaireComponent implements OnInit {
   onSubmit() {
     console.log(this.covidForm.value);
     this.error = null;
-    this.questionnaireQuestionsSerivce.sendAnsweredQuestionnaire(this.covidForm.value)
+    const answers = this.covidForm.value;
+    console.log(answers);
+    this.questionnaireQuestionsSerivce.sendAnsweredQuestionnaire(answers)
       .subscribe(answeredQuestionnaire => {
         console.log(answeredQuestionnaire);
         this.covidForm.reset();
