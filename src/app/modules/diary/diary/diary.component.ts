@@ -8,10 +8,10 @@ import { DiaryService } from 'src/app/modules/diary/services/diary.service';
 })
 export class DiaryComponent implements OnInit {
 
-  data_temp: any[] = [];
-  data_cough: any[] = [];
-  data_breath: any[] = [];
-  data_feel: any[] = [];
+  dataTemp: any[] = [];
+  dataCough: any[] = [];
+  dataBreath: any[] = [];
+  dataFeel: any[] = [];
 
   // options
   showXAxis = true;
@@ -37,10 +37,10 @@ export class DiaryComponent implements OnInit {
 
   ngOnInit(): void {
     this.diaryService.getCovidTimeline(0).subscribe(timeline => {
-      this.data_temp = timeline.data_fiever;
-      this.data_cough = timeline.data_cough;
-      this.data_breath = timeline.data_breath;
-      this.data_feel = timeline.data_feel;
+      this.dataTemp = timeline.data_fiever;
+      this.dataCough = timeline.data_cough;
+      this.dataBreath = timeline.data_breath;
+      this.dataFeel = timeline.data_feel;
     });
   }
 
@@ -48,42 +48,42 @@ export class DiaryComponent implements OnInit {
     console.log(event);
   }
 
-  yAxisTickFormattingCough(value){ 
-    switch(value){
+  yAxisTickFormattingCough(value) {
+    switch (value) {
       case 0:
-        return "Dry cough"
+        return 'Dry cough';
       case 1:
-        return "Productive cough"
-      case 2: 
-        return "No cough"
-    }
+        return 'Productive cough';
+      case 2:
+        return 'No cough';
+          }
   }
 
-  yAxisTickFormattingBreath(value){ 
-    switch(value){
+  yAxisTickFormattingBreath(value) {
+    switch (value) {
       case 0:
-        return "Normal"
+        return 'Normal';
       case 1:
-        return "Biot's respiration"
-      case 2: 
-        return "Kussmail breathing"
-      case 3: 
-        return "Cheyne-Strokes respiration"
-      case 4: 
-        return "I don't know"
-    }
+        return 'Biot\'s respiration';
+      case 2:
+        return 'Kussmail breathing';
+      case 3:
+        return 'Cheyne-Strokes respiration';
+      case 4:
+        return 'I don\'t know';
+          }
   }
 
-  yAxisTickFormattingFeel(value){ 
-    switch(value){
+  yAxisTickFormattingFeel(value) {
+    switch (value) {
       case 0:
-        return "Good"
+        return 'Good';
       case 1:
-        return "Normal"
-      case 2: 
-        return "Bad"
-      case 3: 
-        return "Critical"
-    }
+        return 'Normal';
+      case 2:
+        return 'Bad';
+      case 3:
+        return 'Critical';
+          }
   }
 }
