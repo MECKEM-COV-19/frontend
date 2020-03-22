@@ -13,7 +13,9 @@ export class DefaultCovidQuestionnaire {
         {
             question: 'What is your body temperature?',
             key: 'bodyTemperature',
-            format: QuestionFormat.Number
+            format: QuestionFormat.Number,
+            placeholder: 'Body temperature in Celsius',
+            title: 'Body temperature'
         },
         {
             question: 'Do you have to cough?',
@@ -61,17 +63,20 @@ export class DefaultCovidQuestionnaire {
         {
             question: 'How old are you?',
             key: 'age',
-            format: QuestionFormat.Number
+            format: QuestionFormat.Number,
+            placeholder: 'Age'
         },
         {
             question: 'What is your pulse?',
             key: 'pulse',
-            format: QuestionFormat.Number
+            format: QuestionFormat.Number,
+            placeholder: 'Pulse in beats per minute'
         },
         {
             question: 'If you have a Peak Flow Meter, what is the current value?',
             key: 'peakFlowMeter',
-            format: QuestionFormat.Number
+            format: QuestionFormat.Number,
+            placeholder: 'Peak Flow Meter value'
         },
         {
             question: 'Are you easier of ouf breath?',

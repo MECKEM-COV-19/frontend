@@ -29,10 +29,10 @@
                 <ng-container [ngSwitch]="question.format">
                     <ng-container *ngSwitchCase="QuestionFormat.Number">
                         <mat-form-field>
-                            <mat-label>{{ question.question }}</mat-label>
-                            <input matInput [placeholder]="question.question" [formControlName]="question.key" type="number">
+                            <mat-label>{{ question.placeholder !== undefined ? question.placeholder : question.question }}</mat-label>
+                            <input matInput [placeholder]="question.placeholder !== undefined ? question.placeholder : question.question" [formControlName]="question.key" type="number">
                             <mat-error *ngIf="covidFormGroup.get(question.key).hasError('required')">
-                                {{ question.question }} is required.
+                                {{ question.title !== undefined ? question.title : question.question }} is required.
                             </mat-error>
                         </mat-form-field>
                     </ng-container>

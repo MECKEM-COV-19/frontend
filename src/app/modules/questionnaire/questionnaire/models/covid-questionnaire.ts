@@ -17,6 +17,8 @@ export interface Question {
     key: string;
     format?: QuestionFormat;
     options?: OptionValue[];
+    placeholder?: string;
+    title?: string;
 }
 
 export enum QuestionFormat {
