@@ -28,5 +28,12 @@ export class QuestionnaireComponent implements OnInit {
 
   onSubmit() {
     console.log(this.covidForm.value);
+    this.questionnaireQuestionsSerivce.sendAnsweredQuestionnaire(this.covidForm.value)
+      .subscribe(answeredQuestionnaire => {
+        console.log(answeredQuestionnaire);
+        this.covidForm.reset();
+      }, error => {
+        console.log(error);
+      });
   }
 }
