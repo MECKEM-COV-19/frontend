@@ -21,7 +21,7 @@
                 <input matInput placeholder="Age" formControlName="age">
             </mat-form-field>
         </app-question>
-        <button mat-raised-button color="primary" type="submit">Submit</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="covidForm.invalid">Submit</button>
     </form>
     <div fxFlex="20"></div>
 </div>

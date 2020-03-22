@@ -11,7 +11,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [QuestionnaireComponent, QuestionComponent],
