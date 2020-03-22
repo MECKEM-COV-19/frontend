@@ -1,10 +1,13 @@
 <div fxLayout="row">
     <div fxFlex="20"></div>
-    <form [formGroup]="covidForm" fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="32px" (ngSubmit)="onSubmit()" fxFlex="60">
-        <app-question *ngFor="let covidQuestion of covidQuestionnaire" [question]="covidQuestion" [covidFormGroup]="covidForm"></app-question>
-
-        <mat-error *ngIf="error">{{ error }}</mat-error>
-        <button mat-raised-button color="primary" type="submit" [disabled]="covidForm.invalid">Submit</button>
-    </form>
+    <div fxFlex="60">
+        <h1>How do you feel today?</h1>
+        <form [formGroup]="covidForm" fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="32px" (ngSubmit)="onSubmit()">
+            <app-question *ngFor="let covidQuestion of covidQuestionnaire" [question]="covidQuestion" [covidFormGroup]="covidForm"></app-question>
+    
+            <mat-error *ngIf="error">{{ error }}</mat-error>
+            <button mat-raised-button color="primary" type="submit" [disabled]="covidForm.invalid">Submit</button>
+        </form>
+    </div>
     <div fxFlex="20"></div>
 </div>
