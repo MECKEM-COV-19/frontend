@@ -1,6 +1,14 @@
 <mat-card fxLayout="column" fxLayoutAlign="space-around stretch">
-    <mat-card-header>
+    <mat-card-header fxLayout="column">
         <h2>{{ question.question }}</h2>
+        <div *ngIf="question.linkHelp as linkHelp">
+            <mat-expansion-panel class="help">
+                <mat-expansion-panel-header>
+                    {{ linkHelp.generalInfo }}
+                </mat-expansion-panel-header>
+                <div *ngFor="let link of linkHelp.links"><a [href]="link.href">{{ link.text }}</a></div>
+            </mat-expansion-panel>
+        </div>
     </mat-card-header>
     <mat-card-content fxLayout="row">
         <div fxFlex="20"></div>

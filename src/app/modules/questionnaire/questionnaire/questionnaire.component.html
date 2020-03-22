@@ -1,6 +1,7 @@
 <div fxLayout="row">
     <div fxFlex="20"></div>
     <form [formGroup]="covidForm" fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="32px" (ngSubmit)="onSubmit()" fxFlex="60">
+        <app-question [question]="covidQuestionnaire.isSarsCov2Positive" [covidFormGroup]="covidForm"></app-question>
         <app-question [question]="covidQuestionnaire.bodyTemperature">
             <mat-form-field>
                 <mat-label>Body Temperature</mat-label>

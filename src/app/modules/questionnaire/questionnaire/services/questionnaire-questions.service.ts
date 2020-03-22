@@ -34,6 +34,19 @@ export class QuestionnaireQuestionsService {
           'I don\'t know'
         ],
         key: 'breathingPatterns'
+      },
+      linkHelp: {
+        generalInfo: 'How do I test my breathing pattern?',
+        links: [
+          {
+            href: 'https://flexikon.doccheck.com/de/Cheyne-Stokes-Atmung',
+            text: 'Cheyne-Stokes-Atmung - DocCheck Flexikon'
+          },
+          {
+            href: 'https://en.wikipedia.org/wiki/Cheyne%E2%80%93Stokes_respiration',
+            text: 'Cheyne–Stokes respiration'
+          }
+        ]
       }
     },
     generalFeeling: {
@@ -53,6 +66,16 @@ export class QuestionnaireQuestionsService {
     },
     pulse: {
       question: 'What is your pulse?'
+    },
+    isSarsCov2Positive: {
+      question: 'Are you positively tested for SARS-CoV-2?',
+      options: {
+        key: 'isPositive',
+        options: [
+          'Yes',
+          'No'
+        ]
+      }
     }
   };
 

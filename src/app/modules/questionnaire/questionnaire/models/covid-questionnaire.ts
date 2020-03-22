@@ -5,6 +5,7 @@ export interface CovidQuestionnaire {
     generalFeeling: Question;
     pulse: Question;
     breathingPatterns: Question;
+    isSarsCov2Positive: Question;
 }
 
 export interface Question {
@@ -14,4 +15,15 @@ export interface Question {
         key: string;
     };
     additionalInfo?: string;
+    linkHelp?: LinkHelp;
+}
+
+export interface LinkHelp {
+    generalInfo: string;
+    links: Link[];
+}
+
+export interface Link {
+    href: string;
+    text: string;
 }

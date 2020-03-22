@@ -3,5 +3,4 @@ export interface AnsweredCovidQuestionnaire {
     cough: string;
     age: number;
     pulse: number;
-    
 }
