@@ -1,13 +1,21 @@
-import { CovidQuestionnaire, QuestionFormat } from 'src/app/modules/questionnaire/questionnaire/models/covid-questionnaire';
+import { QuestionFormat, Question } from 'src/app/modules/questionnaire/questionnaire/models/covid-questionnaire';
 
 export class DefaultCovidQuestionnaire {
-    static readonly covidQuestionnaire: CovidQuestionnaire = {
-        bodyTemperature: {
+    static readonly covidQuestionnaire: Question[] = [
+        {
+            question: 'Are you positively tested for SARS-CoV-2?',
+            key: 'isPositive',
+            options: [
+                { text: 'Yes', value: true },
+                { text: 'No', value: false }
+            ]
+        },
+        {
             question: 'What is your body temperature?',
             key: 'bodyTemperature',
             format: QuestionFormat.Number
         },
-        cough: {
+        {
             question: 'Do you have to cough?',
             options: [
                 { text: 'Dry cough' },
@@ -16,7 +24,7 @@ export class DefaultCovidQuestionnaire {
             ],
             key: 'cough',
         },
-        breathingPatterns: {
+        {
             question: 'What is your breathing pattern?',
             options: [
                 { text: 'Normal' },
@@ -40,7 +48,7 @@ export class DefaultCovidQuestionnaire {
                 ]
             }
         },
-        generalFeeling: {
+        {
             question: 'How do you feel?',
             options: [
                 { text: 'good' },
@@ -50,23 +58,15 @@ export class DefaultCovidQuestionnaire {
             ],
             key: 'generalFeeling'
         },
-        age: {
+        {
             question: 'How old are you?',
             key: 'age',
             format: QuestionFormat.Number
         },
-        pulse: {
+        {
             question: 'What is your pulse?',
             key: 'pulse',
             format: QuestionFormat.Number
-        },
-        isSarsCov2Positive: {
-            question: 'Are you positively tested for SARS-CoV-2?',
-            key: 'isPositive',
-            options: [
-                { text: 'Yes', value: true },
-                { text: 'No', value: false }
-            ]
         }
-    };
+    ];
 }

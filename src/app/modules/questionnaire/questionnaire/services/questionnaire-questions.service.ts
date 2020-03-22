@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CovidQuestionnaire } from 'src/app/modules/questionnaire/questionnaire/models/covid-questionnaire';
+import { Question } from 'src/app/modules/questionnaire/questionnaire/models/covid-questionnaire';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AnsweredCovidQuestionnaire } from 'src/app/modules/questionnaire/questionnaire/models/answered-covid-questionnaire';
@@ -9,7 +9,7 @@ import { DefaultCovidQuestionnaire } from 'src/app/modules/questionnaire/questio
   providedIn: 'root'
 })
 export class QuestionnaireQuestionsService {
-  readonly covidQuestionnaire: CovidQuestionnaire = DefaultCovidQuestionnaire.covidQuestionnaire;
+  readonly covidQuestionnaire: Question[] = DefaultCovidQuestionnaire.covidQuestionnaire;
 
   constructor(private http: HttpClient) { }
 
