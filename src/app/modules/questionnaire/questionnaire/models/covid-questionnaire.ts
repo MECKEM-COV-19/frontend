@@ -1,13 +1,3 @@
-export interface CovidQuestionnaire {
-    bodyTemperature: Question;
-    cough: Question;
-    age: Question;
-    generalFeeling: Question;
-    pulse: Question;
-    breathingPatterns: Question;
-    isSarsCov2Positive: Question;
-}
-
 export interface Question {
     question: string;
     additionalInfo?: {
