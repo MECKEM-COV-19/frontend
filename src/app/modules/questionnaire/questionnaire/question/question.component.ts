@@ -19,7 +19,9 @@ export class QuestionComponent implements OnInit {
     console.log(this.question);
   }
 
-  asOptionQuestion(): OptionQuestion {
+  // These functions convert the type to OptionQuestion or FormatQuestion
+  // These were necessary so they could be safely caseted in the html. Make sure to check with *ngIf
+  asOptionQuestion(question: Question): OptionQuestion {
     if (instanceOfOptionQuestion(this.question)) {
       return this.question;
     } else {
@@ -27,7 +29,7 @@ export class QuestionComponent implements OnInit {
     }
   }
 
-  asFormatQuestion(): FormatQuestion {
+  asFormatQuestion(question: Question): FormatQuestion {
     if (instanceOfFormatQuestion(this.question)) {
       return this.question;
     } else {
