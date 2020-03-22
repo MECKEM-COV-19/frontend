@@ -35,9 +35,9 @@ export class QuestionnaireQuestionsService {
         ],
         key: 'breathingPatterns'
       },
-      linkHelp: {
-        generalInfo: 'How do I test my breathing pattern?',
-        links: [
+      additionalInfo: {
+        title: 'How do I test my breathing pattern?',
+        infos: [
           {
             href: 'https://flexikon.doccheck.com/de/Cheyne-Stokes-Atmung',
             text: 'Cheyne-Stokes-Atmung - DocCheck Flexikon'

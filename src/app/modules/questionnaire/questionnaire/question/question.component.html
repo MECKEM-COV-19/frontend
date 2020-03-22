@@ -1,12 +1,19 @@
 <mat-card fxLayout="column" fxLayoutAlign="space-around stretch">
     <mat-card-header fxLayout="column">
         <h2>{{ question.question }}</h2>
-        <div *ngIf="question.linkHelp as linkHelp">
+        <div *ngIf="question.additionalInfo as additionalInfo">
             <mat-expansion-panel class="help">
                 <mat-expansion-panel-header>
-                    {{ linkHelp.generalInfo }}
+                    {{ additionalInfo.title }}
                 </mat-expansion-panel-header>
-                <div *ngFor="let link of linkHelp.links"><a [href]="link.href">{{ link.text }}</a></div>
+                <div *ngFor="let info of additionalInfo.infos">
+                    <ng-container *ngIf="info.href; else plainText">
+                        <a [href]="info.href">{{ info.text }}</a>
+                    </ng-container>
+                    <ng-template #plainText>
+                        {{ info.text }}
+                    </ng-template>
+                </div>
             </mat-expansion-panel>
         </div>
     </mat-card-header>

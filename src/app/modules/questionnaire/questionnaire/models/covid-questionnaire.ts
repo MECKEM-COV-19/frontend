@@ -14,8 +14,10 @@ export interface Question {
         options: OptionValue[];
         key: string;
     };
-    additionalInfo?: string;
-    linkHelp?: LinkHelp;
+    additionalInfo?: {
+        title: string;
+        infos: AdditionalInfo[]
+    };
 }
 
 interface OptionValue {
@@ -23,12 +25,7 @@ interface OptionValue {
     value?: any;
 }
 
-export interface LinkHelp {
-    generalInfo: string;
-    links: Link[];
-}
-
-export interface Link {
-    href: string;
+export interface AdditionalInfo {
+    href?: string;
     text: string;
 }
