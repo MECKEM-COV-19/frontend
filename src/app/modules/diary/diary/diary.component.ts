@@ -10,17 +10,15 @@ export class DiaryComponent implements OnInit {
 
   data: any[] = [];
 
-  view: any[] = [700, 400];
-
   // options
   showXAxis = true;
   showYAxis = true;
   gradient = false;
   showLegend = true;
   showXAxisLabel = true;
-  xAxisLabel = 'Country';
+  xAxisLabel = 'Time';
   showYAxisLabel = true;
-  yAxisLabel = 'Population';
+  yAxisLabel = 'Degree in Celsius';
 
   colorScheme = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
@@ -34,9 +32,9 @@ export class DiaryComponent implements OnInit {
   ngOnInit(): void {
     this.diaryService.getCovidTimeline(0).subscribe(timeline => {
       this.data = timeline.data;
-    })
+    });
   }
-  
+
   onSelect(event) {
     console.log(event);
   }
