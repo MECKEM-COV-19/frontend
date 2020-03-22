@@ -10,6 +10,7 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 })
 export class QuestionnaireComponent implements OnInit {
   covidQuestionnaire: CovidQuestionnaire;
+  error: string = null;
 
   constructor(private questionnaireQuestionsSerivce: QuestionnaireQuestionsService) { }
 
@@ -29,12 +30,14 @@ export class QuestionnaireComponent implements OnInit {
 
   onSubmit() {
     console.log(this.covidForm.value);
+    this.error = null;
     this.questionnaireQuestionsSerivce.sendAnsweredQuestionnaire(this.covidForm.value)
       .subscribe(answeredQuestionnaire => {
         console.log(answeredQuestionnaire);
         this.covidForm.reset();
       }, error => {
         console.log(error);
+        this.error = 'Error when submitting data. Please try submitting your data again.';
       });
   }
 }

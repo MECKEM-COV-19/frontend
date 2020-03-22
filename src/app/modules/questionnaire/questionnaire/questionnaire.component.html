@@ -4,7 +4,7 @@
         <app-question [question]="covidQuestionnaire.bodyTemperature">
             <mat-form-field>
                 <mat-label>Body Temperature</mat-label>
-                <input matInput placeholder="Body Temperature" formControlName="bodyTemperature">
+                <input matInput placeholder="Body Temperature" formControlName="bodyTemperature" type="number">
                 <mat-error *ngIf="bodyTemperature.hasError('required')">
                     Body Temperature is required.
                 </mat-error>
@@ -18,9 +18,10 @@
         <app-question [question]="covidQuestionnaire.age">
             <mat-form-field>
                 <mat-label>Age</mat-label>
-                <input matInput placeholder="Age" formControlName="age">
+                <input matInput placeholder="Age" formControlName="age" type="number">
             </mat-form-field>
         </app-question>
+        <mat-error *ngIf="error">{{ error }}</mat-error>
         <button mat-raised-button color="primary" type="submit" [disabled]="covidForm.invalid">Submit</button>
     </form>
     <div fxFlex="20"></div>
