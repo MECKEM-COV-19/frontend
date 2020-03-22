@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CovidQuestionnaire } from 'src/app/modules/questionnaire/questionnaire/models/covid-questionnaire';
+import { Question } from 'src/app/modules/questionnaire/questionnaire/models/covid-questionnaire';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AnsweredCovidQuestionnaire } from 'src/app/modules/questionnaire/questionnaire/models/answered-covid-questionnaire';
@@ -9,11 +9,14 @@ import { DefaultCovidQuestionnaire } from 'src/app/modules/questionnaire/questio
   providedIn: 'root'
 })
 export class QuestionnaireQuestionsService {
-  readonly covidQuestionnaire: CovidQuestionnaire = DefaultCovidQuestionnaire.covidQuestionnaire;
+  readonly covidQuestionnaire: Question[] = DefaultCovidQuestionnaire.covidQuestionnaire;
 
   constructor(private http: HttpClient) { }
 
   sendAnsweredQuestionnaire(answeredCovidQuestionnaire: AnsweredCovidQuestionnaire): Observable<AnsweredCovidQuestionnaire> {
-    return this.http.post<AnsweredCovidQuestionnaire>('', answeredCovidQuestionnaire);
+    return this.http.post<AnsweredCovidQuestionnaire>(
+      'http://meckemcov19-backend.eba-m4bbpxub.eu-central-1.elasticbeanstalk.com//database/daily-data/',
+      answeredCovidQuestionnaire
+      );
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Question } from 'src/app/modules/questionnaire/questionnaire/models/covid-questionnaire';
+import { Question, QuestionFormat } from 'src/app/modules/questionnaire/questionnaire/models/covid-questionnaire';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -10,8 +10,11 @@ import { FormGroup } from '@angular/forms';
 export class QuestionComponent implements OnInit {
   @Input() question: Question;
   @Input() covidFormGroup: FormGroup;
+  QuestionFormat = QuestionFormat;
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    console.log(this.question);
+  }
 }

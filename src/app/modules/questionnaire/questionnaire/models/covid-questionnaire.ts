@@ -10,17 +10,22 @@ export interface CovidQuestionnaire {
 
 export interface Question {
     question: string;
-    options?: {
-        options: OptionValue[];
-        key: string;
-    };
     additionalInfo?: {
         title: string;
         infos: AdditionalInfo[]
     };
+    key: string;
+    format?: QuestionFormat;
+    options?: OptionValue[];
+    placeholder?: string;
+    title?: string;
 }
 
-interface OptionValue {
+export enum QuestionFormat {
+    Number = 0
+}
+
+export interface OptionValue {
     text: string;
     value?: any;
 }

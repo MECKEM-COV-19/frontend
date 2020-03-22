@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionnaireQuestionsService } from 'src/app/modules/questionnaire/questionnaire/services/questionnaire-questions.service';
-import { CovidQuestionnaire } from 'src/app/modules/questionnaire/questionnaire/models/covid-questionnaire';
+import { Question } from 'src/app/modules/questionnaire/questionnaire/models/covid-questionnaire';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 
 @Component({
@@ -9,7 +9,7 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
   styleUrls: ['./questionnaire.component.scss']
 })
 export class QuestionnaireComponent implements OnInit {
-  covidQuestionnaire: CovidQuestionnaire;
+  covidQuestionnaire: Question[];
   error: string = null;
 
   constructor(private questionnaireQuestionsSerivce: QuestionnaireQuestionsService) { }
@@ -24,7 +24,10 @@ export class QuestionnaireComponent implements OnInit {
     cough: new FormControl('', []),
     age: new FormControl('', []),
     breathingPatterns: new FormControl('', []),
-    generalFeeling: new FormControl('', [])
+    generalFeeling: new FormControl('', []),
+    pulse: new FormControl('', []),
+    isEasierOutOfBreath: new FormControl('', []),
+    peakFlowMeter: new FormControl('', [])
   });
 
   get bodyTemperature() { return this.covidForm.get('bodyTemperature'); }

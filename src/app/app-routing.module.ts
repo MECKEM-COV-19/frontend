@@ -7,6 +7,7 @@ import { QuestionnaireComponent } from 'src/app/modules/questionnaire/questionna
 const routes: Routes = [
   { path: '', component: QuestionnaireComponent, pathMatch: 'full' },
   { path: 'diary', component: DiaryComponent, pathMatch: 'full' },
+  { path: 'timeline', component: DiaryComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
