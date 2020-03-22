@@ -20,12 +20,25 @@
     <mat-card-content fxLayout="row">
         <div fxFlex="20"></div>
         <div fxFlex="60">
-            <ng-content></ng-content>
             <div *ngIf="question.options as options" [formGroup]="covidFormGroup">
-                <mat-radio-group fxLayout="column" fxLayoutAlign="space-around start" fxLayoutGap="8px" [formControlName]="options.key">
-                    <mat-radio-button *ngFor="let option of options.options" [value]="option.value === undefined ? option.text : option.value">{{ option.text }}</mat-radio-button>
+                <mat-radio-group fxLayout="column" fxLayoutAlign="space-around start" fxLayoutGap="8px" [formControlName]="question.key">
+                    <mat-radio-button *ngFor="let option of options" [value]="option.value === undefined ? option.text : option.value">{{ option.text }}</mat-radio-button>
                 </mat-radio-group>
             </div>
+            <ng-container *ngIf="question.format !== undefined" [formGroup]="covidFormGroup">
+                <ng-container [ngSwitch]="question.format">
+                    <ng-container *ngSwitchCase="QuestionFormat.Number">
+                        <mat-form-field>
+                            <mat-label>{{ question.question }}</mat-label>
+                            <input matInput [placeholder]="question.question" [formControlName]="question.key" type="number">
+                            <mat-error *ngIf="covidFormGroup.get(question.key).hasError('required')">
+                                {{ question.question }} is required.
+                            </mat-error>
+                        </mat-form-field>
+                    </ng-container>
+                </ng-container>
+            </ng-container>
+            <ng-content></ng-content>
         </div>
         <div fxFlex="20"></div>
     </mat-card-content>
