@@ -8,7 +8,36 @@ import { DiaryService } from 'src/app/modules/diary/services/diary.service';
 })
 export class DiaryComponent implements OnInit {
 
+  data: any[] = [];
+
+  view: any[] = [700, 400];
+
+  // options
+  showXAxis = true;
+  showYAxis = true;
+  gradient = false;
+  showLegend = true;
+  showXAxisLabel = true;
+  xAxisLabel = 'Country';
+  showYAxisLabel = true;
+  yAxisLabel = 'Population';
+
+  colorScheme = {
+    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+  };
+
+  // line, area
+  autoScale = true;
+
   constructor(private diaryService: DiaryService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.diaryService.getCovidTimeline(0).subscribe(timeline => {
+      this.data = timeline.data;
+    })
+  }
+  
+  onSelect(event) {
+    console.log(event);
+  }
 }

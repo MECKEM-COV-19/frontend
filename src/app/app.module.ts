@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { DiaryModule } from 'src/app/modules/diary/diary.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BrowserModule,
     AppRoutingModule,
     QuestionnaireModule,
+    DiaryModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     HttpClientModule,
