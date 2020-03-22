@@ -14,6 +14,9 @@ export class QuestionnaireQuestionsService {
   constructor(private http: HttpClient) { }
 
   sendAnsweredQuestionnaire(answeredCovidQuestionnaire: AnsweredCovidQuestionnaire): Observable<AnsweredCovidQuestionnaire> {
-    return this.http.post<AnsweredCovidQuestionnaire>('', answeredCovidQuestionnaire);
+    return this.http.post<AnsweredCovidQuestionnaire>(
+      'http://meckemcov19-backend.eba-m4bbpxub.eu-central-1.elasticbeanstalk.com//database/daily-data/',
+      answeredCovidQuestionnaire
+      );
   }
 }
