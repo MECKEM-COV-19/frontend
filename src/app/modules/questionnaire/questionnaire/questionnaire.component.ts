@@ -21,6 +21,7 @@ export class QuestionnaireComponent implements OnInit {
     age: new FormControl('', [])
   });
 
+  get bodyTemperature() { return this.covidForm.get('bodyTemperature'); }
 
   ngOnInit() {
     this.covidQuestionnaire = this.questionnaireQuestionsSerivce.covidQuestionnaire;

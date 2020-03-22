@@ -5,6 +5,9 @@
             <mat-form-field>
                 <mat-label>Body Temperature</mat-label>
                 <input matInput placeholder="Body Temperature" formControlName="bodyTemperature">
+                <mat-error *ngIf="bodyTemperature.hasError('required')">
+                    Body Temperature is required.
+                </mat-error>
             </mat-form-field>
         </app-question>
         <app-question [question]="covidQuestionnaire.cough">
