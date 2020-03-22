@@ -71,4 +71,5 @@ export class DefaultCovidQuestionnaire {
           }
         }
       };
+  static covidQuestionnaire: CovidQuestionnaire;
 }
