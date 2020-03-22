@@ -67,6 +67,19 @@ export class DefaultCovidQuestionnaire {
             question: 'What is your pulse?',
             key: 'pulse',
             format: QuestionFormat.Number
+        },
+        {
+            question: 'If you have a Peak Flow Meter, what is the current value?',
+            key: 'peakFlowMeter',
+            format: QuestionFormat.Number
+        },
+        {
+            question: 'Are you easier of ouf breath?',
+            key: 'isEasierOutOfBreath',
+            options: [
+                { text: 'Yes', value: true },
+                { text: 'No', value: false }
+            ]
         }
     ];
 }
