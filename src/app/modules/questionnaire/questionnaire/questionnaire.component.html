@@ -10,11 +10,9 @@
                 </mat-error>
             </mat-form-field>
         </app-question>
-        <app-question [question]="covidQuestionnaire.cough">
-            <mat-radio-group fxLayout="column" fxLayoutAlign="space-around start" fxLayoutGap="8px" formControlName="cough">
-                <mat-radio-button *ngFor="let option of covidQuestionnaire.cough.options" [value]="option">{{ option }}</mat-radio-button>
-            </mat-radio-group>
-        </app-question>
+        <app-question [question]="covidQuestionnaire.cough" [covidFormGroup]="covidForm"></app-question>
+        <app-question [question]="covidQuestionnaire.breathingPatterns" [covidFormGroup]="covidForm"></app-question>
+        <app-question [question]="covidQuestionnaire.generalFeeling" [covidFormGroup]="covidForm"></app-question>
         <app-question [question]="covidQuestionnaire.age">
             <mat-form-field>
                 <mat-label>Age</mat-label>

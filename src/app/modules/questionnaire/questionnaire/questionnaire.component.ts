@@ -19,7 +19,9 @@ export class QuestionnaireComponent implements OnInit {
       Validators.required
     ]),
     cough: new FormControl('', []),
-    age: new FormControl('', [])
+    age: new FormControl('', []),
+    breathingPatterns: new FormControl('', []),
+    generalFeeling: new FormControl('', [])
   });
 
   get bodyTemperature() { return this.covidForm.get('bodyTemperature'); }

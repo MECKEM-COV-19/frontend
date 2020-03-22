@@ -6,6 +6,11 @@
         <div fxFlex="20"></div>
         <div fxFlex="60">
             <ng-content></ng-content>
+            <div *ngIf="question.options as options" [formGroup]="covidFormGroup">
+                <mat-radio-group fxLayout="column" fxLayoutAlign="space-around start" fxLayoutGap="8px" [formControlName]="options.key">
+                    <mat-radio-button *ngFor="let option of options.options" [value]="option">{{ option }}</mat-radio-button>
+                </mat-radio-group>
+            </div>
         </div>
         <div fxFlex="20"></div>
     </mat-card-content>

@@ -14,14 +14,45 @@ export class QuestionnaireQuestionsService {
     },
     cough: {
       question: 'Do you have to cough?',
-      options: [
-        'Dry cough',
-        'Normal cough',
-        'No cough'
-      ]
+      options: {
+        options: [
+          'Dry cough',
+          'Productive cough',
+          'None'
+        ],
+        key: 'cough'
+      }
+    },
+    breathingPatterns: {
+      question: 'What is your breathing pattern?',
+      options: {
+        options: [
+          'Normal',
+          'Biot\'s respiration',
+          'Kussmaul breathing',
+          'Cheyne-Stokes respiration',
+          'I don\'t know'
+        ],
+        key: 'breathingPatterns'
+      }
+    },
+    generalFeeling: {
+      question: 'How do you feel?',
+      options: {
+        options: [
+          'good',
+          'normal',
+          'bad',
+          'critical'
+        ],
+        key: 'generalFeeling'
+      }
     },
     age: {
       question: 'How old are you?'
+    },
+    pulse: {
+      question: 'What is your pulse?'
     }
   };
 
