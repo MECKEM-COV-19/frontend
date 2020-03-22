@@ -1,13 +1,16 @@
 export interface CovidTimeline {
-    data: SingleTimeline[];
+    data_fiever: SingleTimeline[];
+    data_cough: SingleTimeline[];
+    data_breath: SingleTimeline[];
+    data_feel: SingleTimeline[];
 }
 
 export interface SingleTimeline {
     name: string;
-    series: FieverPoint[];
+    series: SinglePoint[];
 }
 
-export interface FieverPoint {
+export interface SinglePoint {
     value: number;
     name: string;
 }

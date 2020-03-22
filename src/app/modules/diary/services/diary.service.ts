@@ -12,7 +12,7 @@ export class DiaryService {
 
   getCovidTimeline(id: number): Observable<CovidTimeline> {
     return of({
-      data: [
+      data_fiever: [
         {
           name: 'Fiever',
           series: [
@@ -34,6 +34,87 @@ export class DiaryService {
             },
             {
               value: 39,
+              name: '2016-09-23T02:27:13.301Z'
+            }
+          ]
+        }
+      ],
+      data_breath: [
+        {
+          name: 'Breath',
+          series: [
+            {
+              value: 0,
+              name: '2016-09-21T00:15:51.742Z'
+            },
+            {
+              value: 0,
+              name: '2016-09-20T23:45:33.623Z'
+            },
+            {
+              value: 2,
+              name: '2016-09-20T19:19:04.018Z'
+            },
+            {
+              value: 2,
+              name: '2016-09-16T12:23:15.807Z'
+            },
+            {
+              value: 0,
+              name: '2016-09-23T02:27:13.301Z'
+            }
+          ]
+        }
+      ],
+      data_cough: [
+        {
+          name: 'Cough',
+          series: [
+            {
+              value: 2,
+              name: '2016-09-21T00:15:51.742Z'
+            },
+            {
+              value: 2,
+              name: '2016-09-20T23:45:33.623Z'
+            },
+            {
+              value: 0,
+              name: '2016-09-20T19:19:04.018Z'
+            },
+            {
+              value: 0,
+              name: '2016-09-16T12:23:15.807Z'
+            },
+            {
+              value: 0,
+              name: '2016-09-23T02:27:13.301Z'
+            }
+          ]
+        }
+      ],
+      data_feel: [
+        {
+          name: 'Feel',
+          series: [
+            {
+              value: 0,
+              name: '2016-09-21T00:15:51.742Z'
+            },
+            {
+              value: 1,
+              name: '2016-09-20T23:45:33.623Z'
+            },
+            {
+              value: 3,
+              name: '2016-09-20T19:19:04.018Z'
+            },
+            {
+              value: 3,
+              name: '2016-09-16T12:23:15.807Z'
+            },
+            {
+              value: 2,
               name: '2016-09-23T02:27:13.301Z'
             }
           ]

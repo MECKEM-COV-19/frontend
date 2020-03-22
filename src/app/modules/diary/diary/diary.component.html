@@ -1,15 +1,65 @@
-<div id="pie-chart-parent">
+<div class="pie-chart-parent" id="pie-chart-parent-temp">
     <ngx-charts-line-chart
         [scheme]="colorScheme"
-        [results]="data"
+        [results]="data_temp"
         [gradient]="gradient"
         [xAxis]="showXAxis"
         [yAxis]="showYAxis"
-        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="yAxisLabelTemp"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabelCough"
+        [autoScale]="autoScale"
+        (select)="onSelect($event)">
+    </ngx-charts-line-chart>
+</div>
+
+<div class="pie-chart-parent"  id="pie-chart-parent-cough">
+    <ngx-charts-line-chart
+        [scheme]="colorScheme"
+        [results]="data_cough"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
         [showXAxisLabel]="showXAxisLabel"
         [showYAxisLabel]="showYAxisLabel"
         [xAxisLabel]="xAxisLabel"
-        [yAxisLabel]="yAxisLabel"
+        [yAxisLabel]="yAxisLabelCough"
+        [yAxisTickFormatting]="yAxisTickFormattingCough"
+        [autoScale]="autoScale"
+        (select)="onSelect($event)">
+    </ngx-charts-line-chart>
+</div>
+
+<div class="pie-chart-parent"  id="pie-chart-breath">
+    <ngx-charts-line-chart
+        [scheme]="colorScheme"
+        [results]="data_breath"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabelBreath"
+        [yAxisTickFormatting]="yAxisTickFormattingBreath"
+        [autoScale]="autoScale"
+        (select)="onSelect($event)">
+    </ngx-charts-line-chart>
+</div>
+
+<div class="pie-chart-parent"  id="pie-chart-feel">
+    <ngx-charts-line-chart
+        [scheme]="colorScheme"
+        [results]="data_feel"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabelFeel"
+        [yAxisTickFormatting]="yAxisTickFormattingFeel"
         [autoScale]="autoScale"
         (select)="onSelect($event)">
     </ngx-charts-line-chart>
