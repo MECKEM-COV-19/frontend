@@ -45,7 +45,6 @@ export class DiaryComponent implements OnInit {
   }
 
   onSelect(event) {
-    console.log(event);
   }
 
   yAxisTickFormattingCough(value) {

@@ -15,9 +15,7 @@ export class QuestionComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    console.log(this.question);
-  }
+  ngOnInit() { }
 
   // These functions convert the type to OptionQuestion or FormatQuestion
   // These were necessary so they could be safely caseted in the html. Make sure to check with *ngIf
