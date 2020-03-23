@@ -47,7 +47,8 @@ export class QuestionnaireComponent implements OnInit {
         this.covidForm.reset();
       }, error => {
         console.log(error);
-        this.error = 'Error when submitting data. Please try submitting your data again.';
+        // tslint:disable-next-line: max-line-length
+        this.error = 'Our backend hasn\'t implemented all necessary security, data protection and privacy features yet. We do not want to violate any legal rules so we do not allow saving any data at this point in time. Submission is only allowed for registered beta testers. Thank you for understanding!';
       });
   }
 }
