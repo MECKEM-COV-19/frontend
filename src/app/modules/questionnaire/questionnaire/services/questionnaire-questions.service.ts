@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { AnsweredCovidQuestionnaire } from 'src/app/modules/questionnaire/questionnaire/models/answered-covid-questionnaire';
 import { DefaultCovidQuestionnaire } from 'src/app/modules/questionnaire/questionnaire/services/covid-questionnaire.default';
 
+import { environment } from '../../../../../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +17,7 @@ export class QuestionnaireQuestionsService {
 
   sendAnsweredQuestionnaire(answeredCovidQuestionnaire: AnsweredCovidQuestionnaire): Observable<AnsweredCovidQuestionnaire> {
     return this.http.post<AnsweredCovidQuestionnaire>(
-      'http://meckemcov19-backend.eba-m4bbpxub.eu-central-1.elasticbeanstalk.com//database/daily-data/',
+      environment.backendUrl+'/database/daily-data/',
       answeredCovidQuestionnaire
       );
   }
