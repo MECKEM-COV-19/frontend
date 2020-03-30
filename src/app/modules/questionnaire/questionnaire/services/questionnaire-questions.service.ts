@@ -17,7 +17,7 @@ export class QuestionnaireQuestionsService {
 
   sendAnsweredQuestionnaire(answeredCovidQuestionnaire: AnsweredCovidQuestionnaire): Observable<AnsweredCovidQuestionnaire> {
     return this.http.post<AnsweredCovidQuestionnaire>(
-      environment.backendUrl+'/database/daily-data/',
+      environment.backendUrl + '/database/daily-data/',
       answeredCovidQuestionnaire
       );
   }
