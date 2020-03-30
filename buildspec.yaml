@@ -13,7 +13,7 @@ phases:
       # trigger unit tests
       #- npm run test
       # trigger production build
-      - npm run build
+      - npm run build:prod
 
 artifacts:
   files:
